@@ -79,6 +79,8 @@ def log_in(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
+            return redirect('index')
+        else:
             return redirect('register')
     return render(request, 'auth/login.html')
 
@@ -132,3 +134,8 @@ def register(request):
                 return redirect('register')
 
     return render(request, 'auth/register.html')
+
+
+def log_out(request):
+    logout(request)
+    return redirect('index')
