@@ -48,7 +48,7 @@ def cart(request):
     return render(request, 'main/cart.html')
 
 
-def chaekout(request):
+def checkout(request):
     return render(request, 'main/checkout.html')
 
 
